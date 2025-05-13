@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_&8$$t8nljk!=b-2^-v&%-zjgo495bhydmri0vp@)tv19k%v+u'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-_&8$$t8nljk!=b-2^-v&%-zjgo495bhydmri0vp@)tv19k%v+u')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') + ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Added for static file handling
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,15 +59,15 @@ MIDDLEWARE = [
 ]
 
 # Configure CORS to allow requests from the frontend
-CORS_ALLOWED_ORIGINS = [
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '').split(',') + [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
     "http://localhost:8081",  # Vue dev server might use this port
     "http://127.0.0.1:8081",
 ]
 
-# Allow all origins for development (comment out in production)
-CORS_ALLOW_ALL_ORIGINS = True
+# Allow all origins for development (set to False in production)
+CORS_ALLOW_ALL_ORIGINS = os.environ.get('CORS_ALLOW_ALL_ORIGINS', 'True').lower() == 'true'
 
 # Enable CORS headers and allow all authentication credentials
 CORS_ALLOW_CREDENTIALS = True
@@ -170,11 +171,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(BASE_DIR, 'staticfiles'))
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'health_app/static'),
 ]
+
+# WhiteNoise configuration
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

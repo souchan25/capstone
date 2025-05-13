@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: student-health-assistant-backend
+    runtime: python
+    plan: free
+    region: oregon # Change to your preferred region
+    buildCommand: |
+      # Install Python dependencies
+      pip install -r backend/requirements.txt
+      # Apply migrations and collect static files
+      cd backend
+      python manage.py migrate
+      python manage.py collectstatic --noinput
+    startCommand: |
+      cd backend
+      gunicorn health_project.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DJANGO_SETTINGS_MODULE
+        value: health_project.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        value: .onrender.com
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://student-health-assistant-frontend.onrender.com
+      - key: STATIC_ROOT
+        value: staticfiles

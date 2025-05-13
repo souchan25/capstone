@@ -1,0 +1,91 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - inform_symptoms
+  - ask_health_question
+  - ask_disease_info
+  - ask_symptom_info
+  - ask_if_experiencing_symptom
+
+entities:
+  - symptom
+  - disease
+
+slots:
+  symptoms:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: symptom
+  
+  symptom:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: symptom
+  
+  disease:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: disease
+      
+responses:
+  utter_greet:
+  - text: "Hello! I'm your student health assistant. How can I help you today?"
+
+  utter_ask_symptoms:
+  - text: "Can you tell me what symptoms you are experiencing?"
+
+  utter_collecting_symptoms:
+  - text: "I've noted down your symptoms. Any other symptoms you want to mention?"
+
+  utter_confirm_symptoms:
+  - text: "I understand you're experiencing the following symptoms: {symptoms}. Is that correct?"
+
+  utter_diagnosing:
+  - text: "Based on the symptoms you've described, I'm analyzing possible conditions..."
+
+  utter_no_symptoms:
+  - text: "I need to know your symptoms to help you. Can you please describe what you're experiencing?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great! Is there anything else I can help you with?"
+
+  utter_goodbye:
+  - text: "Take care of yourself! Goodbye."
+
+  utter_iamabot:
+  - text: "I am a health assistant bot, designed to help students with health concerns."
+
+  utter_disease_info:
+  - text: "I'll look that up for you. Let me provide information about {disease}."
+
+  utter_symptom_info:
+  - text: "I'll look that up for you. Let me provide information about {symptom}."
+
+  utter_cant_diagnose:
+  - text: "I can't provide a personal diagnosis. If you share your symptoms, I can give general information, but please consult a healthcare professional for medical advice."
+
+actions:
+  - action_diagnose_disease
+  - action_provide_disease_info
+  - action_provide_symptom_info
+  - action_check_if_experiencing
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,82 @@
+/* Fullscreen layout fixes */
+
+/* Global fullscreen layout */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* App container */
+#app {
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Main content area */
+.main-content {
+  display: flex !important;
+  flex: 1 !important;
+  height: calc(100vh - 70px) !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+/* Sidebar layout */
+.sidebar-wrapper {
+  height: 100% !important;
+  overflow-y: auto !important;
+}
+
+/* Content area */
+.content-area {
+  flex: 1 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* App header */
+.app-header {
+  width: 100% !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: calc(100vh - 70px) !important;
+  }
+  
+  .sidebar-wrapper {
+    width: 100% !important;
+    max-height: 300px !important;
+  }
+  
+  .content-area {
+    width: 100% !important;
+  }
+} 

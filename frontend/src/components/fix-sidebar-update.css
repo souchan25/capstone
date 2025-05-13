@@ -1,0 +1,113 @@
+/* Enhanced sidebar fixes to ensure visibility and proper functioning */
+
+/* Main layout container */
+.main-layout {
+  display: flex !important;
+  position: relative !important;
+  height: calc(100vh - 70px) !important;
+  overflow: hidden !important;
+}
+
+/* Make sure sidebar wrapper is visible and has proper dimensions */
+.sidebar-wrapper {
+  flex: 0 0 300px !important;
+  width: 300px !important;
+  position: relative !important;
+  transition: all 0.3s ease-in-out !important;
+  overflow: visible !important; /* Important for showing the toggle button */
+  min-height: 100% !important;
+}
+
+.sidebar-wrapper.hidden {
+  flex: 0 0 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Reset sidebar positioning */
+.sidebar {
+  height: 100% !important;
+  width: 300px !important;
+  position: relative !important;
+  transform: none !important;
+  transition: all 0.3s ease-in-out !important;
+  z-index: 5 !important;
+}
+
+.sidebar.collapsed {
+  width: 0 !important;
+  transform: translateX(-300px) !important;
+  overflow: hidden !important;
+}
+
+/* Make sure toggle button is always visible */
+.sidebar-toggle {
+  position: absolute !important;
+  z-index: 10 !important;
+  right: -15px !important;
+  top: 20px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Content area adjustments */
+.content-area {
+  flex: 1 !important;
+  transition: all 0.3s ease-in-out !important;
+  width: auto !important;
+}
+
+.content-area.expanded {
+  margin-left: 0 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  
+  .sidebar-wrapper {
+    flex: none !important;
+    width: 100% !important;
+    max-height: 300px !important;
+  }
+  
+  .sidebar-wrapper.hidden {
+    max-height: 0 !important;
+  }
+  
+  .sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .sidebar.collapsed {
+    transform: translateY(-100%) !important;
+  }
+  
+  .sidebar-toggle {
+    right: 20px !important;
+    bottom: -15px !important;
+    top: auto !important;
+    transform: rotate(90deg) !important;
+  }
+  
+  .sidebar.collapsed ~ .sidebar-toggle {
+    transform: rotate(-90deg) !important;
+    bottom: 10px !important;
+  }
+}
+
+/* Ensure chat display works correctly */
+.chat-container.full-width {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Force sidebar and toggle button to be visible */
+.dashboard-container .sidebar-wrapper,
+.dashboard-container .sidebar-toggle {
+  display: block !important;
+}

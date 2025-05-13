@@ -1,0 +1,25 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | CPSU Health Assistant Admin{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/custom_admin.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<script src="{% static 'admin/js/admin_charts.js' %}" defer></script>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'admin/img/cpsu-seeklogo.png' %}" alt="CPSU Logo" class="brand-logo">
+        <span>CPSU Health Assistant Administration</span>
+    </a>
+</h1>
+{% endblock %}
+
+{% block welcome-msg %}
+    <strong>{{ user.get_username }}</strong> | CPSU Clinic Staff
+{% endblock %}
+
+{% block nav-global %}{% endblock %} 

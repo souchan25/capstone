@@ -1,0 +1,458 @@
+/* Modern Card Styles */
+.card-modern {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Form Controls */
+.form-control-modern {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e1e5eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #f9fafc;
+}
+
+.form-control-modern:focus {
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  border-color: var(--primary-color);
+  background-color: #fff;
+  outline: none;
+}
+
+/* Button Styles */
+.btn-modern {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Table Styles */
+.reports-table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.reports-table th, .reports-table td {
+  padding: 1.2rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reports-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reports-table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.reports-table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.reports-table th i {
+  color: var(--primary-color);
+  margin-right: 6px;
+}
+
+.reports-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.reports-table tbody tr:hover {
+  background-color: #f8fafd;
+  transform: translateY(-2px);
+}
+
+tr.high-severity {
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+tr.medium-severity {
+  background-color: rgba(255, 152, 0, 0.05);
+}
+
+.reports-table td {
+  vertical-align: middle;
+}
+
+.date-field, .student-name, .condition-field {
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.symptoms-field {
+  max-width: 250px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Severity Badge */
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 6px;
+}
+
+.severity-badge .status-dot {
+  font-size: 10px;
+  animation: pulse 2s infinite;
+}
+
+.severity-badge.high {
+  background-color: #ffecec;
+  color: #e53935;
+}
+
+.severity-badge.medium {
+  background-color: #fff8e1;
+  color: #ff9800;
+}
+
+.severity-badge.low {
+  background-color: #e8f5e9;
+  color: #43a047;
+}
+
+/* Modern Loading Spinner */
+.spinner-modern {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(67, 97, 238, 0.2);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* No Reports */
+.no-reports {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.no-reports i {
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #edf2f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--dark-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-header h3 i {
+  color: var(--primary-color);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6c757d;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.report-info, .prediction-info {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-info h4, .prediction-info h4 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.report-info h4 i, .prediction-info h4 i {
+  color: var(--primary-color);
+}
+
+.info-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.info-group label {
+  font-weight: 600;
+  width: 140px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-group label i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.highlight-text {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.symptoms-list {
+  line-height: 1.6;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input-badge {
+  background-color: #e7f5ff;
+  color: #0369a1;
+}
+
+.condition-name {
+  font-weight: 700;
+  color: #334155;
+  font-size: 1.05rem;
+}
+
+.confidence-meter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 150px;
+  background-color: #e2e8f0;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 100px;
+  transition: width 1s ease-out;
+}
+
+.confidence-text {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.severity-indicator {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.severity-indicator.high {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.severity-indicator.medium {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.severity-indicator.low {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.status-dot {
+  animation: pulse 2s infinite;
+}
+
+.info-group.advice {
+  display: block;
+}
+
+.advice-box {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--primary-color);
+  padding: 1.2rem;
+  margin-top: 0.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.advice-box p {
+  margin: 0;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  flex: 1;
+}
+
+.reviewed-btn {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+
+.reviewed-btn:hover {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+
+.contact-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #1e5a87);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .info-group label {
+    width: 100%;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}

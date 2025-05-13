@@ -1,0 +1,232 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block title %}{% translate "Log in" %} | CPSU Health Assistant Admin{% endblock %}
+
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/custom_admin.css' %}">
+<style>
+  body.login {
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+    
+  .login-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+      .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+      .brand-logo {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin: 0 auto 15px;
+      border-radius: 0;
+      background: transparent;
+    }
+    
+    .site-title {
+      color: var(--primary-color);
+      margin: 10px 0 0;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    
+    .form-container {
+      width: 100%;
+    }
+    
+    .form-row {
+      margin-bottom: 20px;
+    }
+    
+    .form-row label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .form-row input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    
+    .errornote {
+      color: #ba2121;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin: 0 0 20px;
+      border: 1px solid #ba2121;
+    }
+    
+    .submit-row {
+      margin-top: 20px;
+    }
+    
+    .submit-button {
+      width: 100%;
+      background: #007500;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    
+    .submit-button:hover {
+      background: var(--hover-color);
+      transform: translateY(-2px);
+    }
+    
+    .password-reset {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+    
+    .password-reset a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    .password-reset a:hover {
+      text-decoration: underline;
+    }
+    
+    .university-info {
+      text-align: center;
+      margin-top: 40px;
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .university-info p {
+      margin: 3px 0;
+    }
+    
+    @media (max-width: 480px) {
+      .login-container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+    
+    /* Hide regular admin header/footer when on login page */
+    body.login #header,
+    body.login #footer, 
+    body.login br.clear,
+    body.login #container > div.breadcrumbs {
+      display: none;
+    }
+    
+    /* Make sure the main container takes up full height and centers content */
+    body.login #container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Hide other default Django admin elements on login page */
+    body.login #content {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+  </style>
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} login{% endblock %}
+
+{% block usertools %}{% endblock %}
+{% block nav-global %}{% endblock %}
+{% block nav-sidebar %}{% endblock %}
+{% block content_title %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+<div class="login-container">
+  {% if form.errors and not form.non_field_errors %}
+  <p class="errornote">
+    {% if form.errors.items|length == 1 %}
+      {% translate "Please correct the error below." %}
+    {% else %}
+      {% translate "Please correct the errors below." %}
+    {% endif %}
+  </p>
+  {% endif %}
+
+  {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+      <p class="errornote">{{ error }}</p>
+    {% endfor %}
+  {% endif %}
+  
+  <div class="header">
+    <img src="{% static 'admin/img/cpsu-seeklogo.png' %}" alt="CPSU Logo" class="brand-logo">
+    <h1 class="site-title">CPSU Health Assistant Administration</h1>
+  </div>
+  
+  <div class="form-container">
+    <form action="{{ app_path }}" method="post" id="login-form">
+      {% csrf_token %}
+      
+      <div class="form-row">
+        {{ form.username.errors }}
+        {{ form.username.label_tag }}
+        {{ form.username }}
+      </div>
+      
+      <div class="form-row">
+        {{ form.password.errors }}
+        {{ form.password.label_tag }}
+        {{ form.password }}
+        <input type="hidden" name="next" value="{{ next }}">
+      </div>
+      
+      <div class="submit-row">
+        <input type="submit" value="{% translate 'Log in' %}" class="submit-button">
+      </div>
+    </form>
+    
+    {% url 'admin_password_reset' as password_reset_url %}
+    {% if password_reset_url %}
+    <div class="password-reset">
+      <a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
+    </div>
+    {% endif %}
+  </div>
+  
+  <div class="university-info">
+    <p><strong>Central Philippines State University</strong></p>
+    <p>University Clinic - Student Health Administration</p>
+    <p>Kabankalan City, Negros Occidental</p>
+  </div>
+</div>
+{% endblock %}

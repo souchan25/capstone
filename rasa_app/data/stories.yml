@@ -1,0 +1,84 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_no_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_no_symptoms
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: symptom collection path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform_symptoms
+  - action: utter_collecting_symptoms
+  - intent: inform_symptoms
+  - action: utter_confirm_symptoms
+  - intent: affirm
+  - action: utter_diagnosing
+  - action: action_diagnose_disease
+  
+- story: direct symptom to diagnosis path
+  steps:
+  - intent: inform_symptoms
+  - action: utter_collecting_symptoms
+  - intent: ask_health_question
+  - action: utter_diagnosing
+  - action: action_diagnose_disease
+
+- story: ask health question first path
+  steps:
+  - intent: ask_health_question
+  - action: utter_ask_symptoms
+  - intent: inform_symptoms
+  - action: utter_confirm_symptoms
+  - intent: affirm
+  - action: utter_diagnosing
+  - action: action_diagnose_disease
+
+- story: ask disease information path
+  steps:
+  - intent: ask_disease_info
+  - action: action_provide_disease_info
+
+- story: ask symptom information path
+  steps:
+  - intent: ask_symptom_info
+  - action: action_provide_symptom_info
+
+- story: ask if experiencing symptom or disease path
+  steps:
+  - intent: ask_if_experiencing_symptom
+  - action: action_check_if_experiencing
+
+# New story to handle when user denies having additional symptoms
+- story: symptom collection with denial of additional symptoms
+  steps:
+  - intent: inform_symptoms
+  - action: utter_collecting_symptoms
+  - intent: deny
+  - action: utter_diagnosing
+  - action: action_diagnose_disease

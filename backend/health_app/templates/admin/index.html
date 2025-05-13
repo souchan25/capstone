@@ -1,0 +1,146 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block content %}
+<div id="content-main">
+  <!-- CPSU Dashboard Overview -->
+  <div class="dashboard-header">
+    <h2>CPSU Student Health Dashboard</h2>
+    <p class="dashboard-subtitle">Central Philippines State University - University Clinic</p>
+    <div class="date-display">{{ current_date|date:"l, F j, Y" }}</div>
+  </div>
+
+  <!-- Medical Alert Section (if needed) -->
+  <div class="medical-alert">
+    Remember to update health protocols according to the latest Department of Health guidelines.
+  </div>
+
+  <!-- Dashboard Cards and Charts -->
+  <div class="dashboard-stats">
+    <div class="stat-card">
+      <h3>Total Reports</h3>
+      <div class="stat-value" id="total-reports">Loading...</div>
+      <div class="stat-icon"><i class="fas fa-clipboard-list"></i></div>
+      <div class="stat-trend">Current semester</div>
+    </div>
+    
+    <div class="stat-card">
+      <h3>Active Students</h3>
+      <div class="stat-value" id="active-students">Loading...</div>
+      <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+      <div class="stat-trend">Registered in system</div>
+    </div>
+    
+    <div class="stat-card">
+      <h3>Today's Reports</h3>
+      <div class="stat-value" id="today-reports">Loading...</div>
+      <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+      <div class="stat-trend">Need attention</div>
+    </div>
+    
+    <div class="stat-card">
+      <h3>High Severity Cases</h3>
+      <div class="stat-value" id="high-severity">Loading...</div>
+      <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <div class="stat-trend">Immediate attention required</div>
+    </div>
+  </div>
+
+  <div class="medical-info-card">
+    <h3><i class="fas fa-heartbeat"></i> Health Center Status</h3>
+    <div class="status-indicators">
+      <div class="status-item">
+        <span class="status-label">Staff On Duty:</span>
+        <span class="status-value">3 Medical Staff</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Beds Available:</span>
+        <span class="status-value">4 of 6</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Response Time:</span>
+        <span class="status-value">15 minutes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-charts">
+    <div class="chart-container">
+      <h3>Symptom Distribution</h3>
+      <canvas id="symptomChart" width="400" height="300"></canvas>
+    </div>
+    
+    <div class="chart-container">
+      <h3>Reports by Severity</h3>
+      <canvas id="severityChart" width="400" height="300"></canvas>
+    </div>
+  </div>
+
+  <div class="dashboard-charts">
+    <div class="chart-container">
+      <h3>Weekly Health Trend</h3>
+      <canvas id="trendChart" width="400" height="300"></canvas>
+    </div>
+    
+    <div class="chart-container">
+      <h3>Common Conditions</h3>
+      <canvas id="conditionsChart" width="400" height="300"></canvas>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2>{% translate 'Recent actions' %}</h2>
+        <h3>{% translate 'My actions' %}</h3>
+        {% load log %}
+        {% get_admin_log 10 as admin_log for_user user %}
+        {% if not admin_log %}
+            <p>{% translate 'None available' %}</p>
+        {% else %}
+            <ul class="actionlist">
+                {% for entry in admin_log %}
+                    <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                        {% if entry.is_deletion or not entry.get_admin_url %}
+                            {{ entry.object_repr }}
+                        {% else %}
+                            <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                        {% endif %}
+                        <br>
+                        {% if entry.content_type %}
+                            <span class="mini quiet">{% filter capfirst %}{{ entry.content_type.name }}{% endfilter %}</span>
+                        {% else %}
+                            <span class="mini quiet">{% translate 'Unknown content' %}</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="module" id="quick-actions-module">
+        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+        <div class="quick-action-buttons">
+            <a href="{% url 'admin:health_app_symptomreport_add' %}" class="quick-action-btn">
+                <i class="fas fa-plus-circle"></i> New Report
+            </a>
+            <a href="{% url 'admin:health_app_student_changelist' %}" class="quick-action-btn">
+                <i class="fas fa-users"></i> Manage Students
+            </a>
+            <a href="#" class="quick-action-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Print Dashboard
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

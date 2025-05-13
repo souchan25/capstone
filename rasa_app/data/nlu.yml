@@ -1,0 +1,282 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: inform_symptoms
+  examples: |
+    - I have [headache](symptom)
+    - I've been experiencing [fever](symptom)
+    - I feel [nausea](symptom)
+    - My [stomach hurts](symptom)
+    - I have [joint pain](symptom)
+    - I'm having [chest pain](symptom)
+    - I've got [sore throat](symptom)
+    - I've got [cough](symptom) and [cold](symptom)
+    - I'm suffering from [fatigue](symptom) and [body ache](symptom)
+    - I have [headache](symptom) and [nausea](symptom)
+    - I have a [headache](symptom) and [fever](symptom)
+    - my symptoms include [vomiting](symptom) and [dizziness](symptom)
+    - i'm having [chills](symptom) and [sweating](symptom)
+    - experiencing [muscle pain](symptom)
+    - having trouble with [breathing](symptom)
+    - I'm experiencing [abdominal pain](symptom)
+    - I have [bloating](symptom) in my stomach
+    - My vision is [blurred vision](symptom)
+    - I have [changes in appetite or sleep](symptom)
+    - Feeling [chest discomfort](symptom)
+    - Having [chest tightness](symptom)
+    - I noticed [cloudy or bloody urine](symptom)
+    - My nose is [congestion or runny nose](symptom)
+    - I'm dealing with [constipation](symptom)
+    - I have a [cough](symptom) that won't go away
+    - Been [coughing up blood](symptom)
+    - Experiencing [decreased appetite](symptom)
+    - Having [diarrhea](symptom) since yesterday
+    - Feeling [dizziness](symptom) when I stand up
+    - My [ear pain](symptom) is getting worse
+    - Having [excessive worry](symptom) lately
+    - Notice some [eye redness](symptom)
+    - Dealing with [feelings of guilt](symptom)
+    - I'm [feeling tired](symptom) all the time
+    - Having [frequent urination](symptom)
+    - There's a [grating sensation](symptom) in my knee
+    - Having trouble [hearing difficulty](symptom)
+    - Experiencing [heartburn](symptom) after meals
+    - I have [high fever](symptom)
+    - Suffering from [intense throbbing head pain](symptom)
+    - Having [itchy eyes](symptom)
+    - My skin has [itchy skin rash](symptom)
+    - My throat is [itchy throat](symptom)
+    - Dealing with [joint/muscle pain](symptom)
+    - Having [loss of appetite](symptom)
+    - Experiencing [loss of taste or smell](symptom)
+    - Noticing [mild bleeding](symptom) from my gums
+    - Having [mild body aches](symptom)
+    - Feeling [muscle aches](symptom) all over
+    - Experiencing [nasal congestion](symptom)
+    - Had a [nosebleed](symptom) this morning
+    - Having [night sweats](symptom)
+    - Feeling [pain behind the eyes](symptom)
+    - It burns when I pee [painful urination](symptom)
+    - I have a [persistent cough](symptom) for weeks
+    - My heart is [rapid heartbeat](symptom)
+    - Having [red eyes](symptom)
+    - There's a [rash](symptom) on my skin
+    - Feeling [restlessness](symptom) 
+    - My nose is [runny nose](symptom)
+    - I have [sensitivity to light](symptom)
+    - Noticing [sensitivity to sound](symptom)
+    - Experiencing [shortness of breath](symptom)
+    - I keep [sneezing](symptom)
+    - My [sore throat](symptom) is painful
+    - I'm [sweating](symptom) more than usual
+    - My feet show [swelling](symptom)
+    - I have [trouble sleeping](symptom)
+    - Experiencing [unintended weight loss](symptom)
+    - I feel an [urgency to urinate](symptom)
+    - I've been [wheezing](symptom) when I breathe
+
+- intent: ask_health_question
+  examples: |
+    - What could be wrong with me?
+    - Can you diagnose my symptoms?
+    - What disease do I have?
+    - What might be causing my symptoms?
+    - Can you tell me what's wrong?
+    - I need a diagnosis
+    - What illness might I have?
+    - Help me understand what's wrong with me
+
+- intent: ask_disease_info
+  examples: |
+    - what is [COVID-19](disease)?
+    - can you tell me about [common cold](disease)?
+    - what causes [asthma](disease)?
+    - how serious is [pneumonia](disease)?
+    - tell me about [influenza](disease)
+    - information about [migraine](disease)
+    - what is [type 2 diabetes](disease)?
+    - describe [dengue fever](disease)
+    - facts about [hepatitis B](disease)
+    - what do you know about [tuberculosis](disease)?
+    - what exactly is [bronchitis](disease)?
+    - can you explain [eczema](disease)?
+    - tell me about [depression](disease)
+    - how dangerous is [stroke](disease)?
+    - what can you tell me about [conjunctivitis](disease)?
+
+- intent: ask_symptom_info
+  examples: |
+    - what is [nausea](symptom)?
+    - what causes [headache](symptom)?
+    - can you explain [fever](symptom)?
+    - tell me about [cough](symptom)
+    - what does [joint pain](symptom) mean?
+    - information about [shortness of breath](symptom)
+    - what exactly is [chest pain](symptom)?
+    - describe [dizziness](symptom)
+    - facts about [fatigue](symptom)
+    - what do you know about [rash](symptom)?
+    - explain what [chills](symptom) are
+    - what is [abdominal pain](symptom) a sign of?
+    - tell me about [loss of taste or smell](symptom)
+    - why do I have [heart palpitations](symptom)?
+
+- intent: ask_if_experiencing_symptom
+  examples: |
+    - am I experiencing [nausea](symptom)?
+    - do I have [fever](symptom)?
+    - could this be [migraine](disease)?
+    - is this [chest pain](symptom) normal?
+    - how do I know if I have [pneumonia](disease)?
+    - could these symptoms be [COVID-19](disease)?
+    - am I having [allergies](disease)?
+    - is this [insomnia](disease)?
+    - does this sound like [flu](disease)?
+    - are these symptoms of [asthma](disease)?
+    - might I have [diabetes](disease)?
+    - could I be having [heart problems](disease)?
+    - is this [anxiety](disease)?
+    - am I experiencing [dehydration](disease)?
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+# Lookup tables for better symptom recognition
+lookup_tables:
+  - name: symptom
+    elements: |
+      headache
+      fever
+      nausea
+      cough
+      sore throat
+      fatigue
+      chest pain
+      abdominal pain
+      bloating
+      blurred vision
+      chest discomfort
+      chest tightness
+      chills
+      cloudy or bloody urine
+      congestion or runny nose
+      constipation
+      coughing up blood
+      decreased appetite
+      diarrhea
+      dizziness
+      ear pain
+      excessive worry
+      eye redness
+      feeling tired
+      joint pain
+      loss of appetite
+      loss of taste or smell
+      muscle aches
+      nasal congestion
+      nosebleed
+      night sweats
+      pain behind the eyes
+      painful urination
+      persistent cough
+      rapid heartbeat
+      red eyes
+      rash
+      restlessness
+      runny nose
+      sensitivity to light
+      sensitivity to sound
+      shortness of breath
+      sneezing
+      sweating
+      swelling
+      trouble sleeping
+      vomiting
+      weight loss
+      wheezing

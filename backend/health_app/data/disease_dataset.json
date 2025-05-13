@@ -1,0 +1,351 @@
+[
+    {
+      "disease": "Common cold",
+      "symptoms": [
+        "runny nose",
+        "nasal congestion",
+        "cough",
+        "sneezing",
+        "sore throat",
+        "headache",
+        "mild body aches",
+        "low-grade fever"
+      ],
+      "advice": "Rest and drink plenty of fluids; use warm liquids and over-the-counter pain relievers to ease symptoms. Use saline nasal sprays or gargles for congestion or sore throat. If severe trouble breathing, high fever, dehydration or symptoms lasting over a week, consult a doctor. Antibiotics are not needed for viral colds. Prevent spread by handwashing and avoid close contact, and get rest and a healthy diet to support immunity."
+    },
+    {
+      "disease": "Influenza (Flu)",
+      "symptoms": [
+        "fever",
+        "cough",
+        "sore throat",
+        "runny or stuffy nose",
+        "headache",
+        "muscle aches",
+        "fatigue",
+        "chills"
+      ],
+      "advice": "Stay home, rest, and drink fluids. Use acetaminophen or ibuprofen for fever and aches (avoid aspirin in children) and a humidifier. Antiviral prescription drugs may help if started early, especially for high-risk individuals. See a doctor if breathing is difficult, chest pain, dehydration, or if you worsen or do not improve after several days. Prevention includes annual flu vaccination, hand hygiene, and covering coughs."
+    },
+    {
+      "disease": "COVID-19",
+      "symptoms": [
+        "fever or chills",
+        "cough",
+        "shortness of breath",
+        "sore throat",
+        "loss of taste or smell",
+        "fatigue",
+        "muscle or body aches",
+        "headache",
+        "congestion or runny nose",
+        "nausea or vomiting",
+        "diarrhea"
+      ],
+      "advice": "Isolate, rest, stay hydrated, and take fever reducers (acetaminophen) and cough medicine if needed. Monitor breathing and oxygen levels; use inhaler if prescribed for breathing trouble. Seek medical help for emergency symptoms (difficulty breathing, chest pain, confusion) or if you are high-risk. Follow public health advice (masking, testing, vaccination) and practice good hygiene to prevent spread."
+    },
+    {
+      "disease": "Pneumonia",
+      "symptoms": [
+        "cough (often producing phlegm)",
+        "fever",
+        "chills",
+        "rapid or difficult breathing",
+        "chest pain with breathing",
+        "fatigue"
+      ],
+      "advice": "Get plenty of rest and fluids. Over-the-counter fever reducers (acetaminophen or ibuprofen) can ease discomfort. Antibiotics may be needed if it's bacterial (as determined by a doctor). See a healthcare provider for evaluation if you have chest pain, high fever, difficulty breathing, or if symptoms are severe or persist. Prevent pneumonia by getting vaccinated (pneumococcal and flu vaccines), not smoking, and maintaining good hygiene."
+    },
+    {
+      "disease": "Bronchitis",
+      "symptoms": [
+        "cough (with sputum)",
+        "chest discomfort",
+        "fatigue",
+        "shortness of breath",
+        "slight fever and chills"
+      ],
+      "advice": "Rest and increase fluid intake to thin mucus. Use a humidifier or inhale steam, and consider cough syrup at bedtime for cough relief. Avoid smoke and lung irritants. If wheezing or asthma is present, use prescribed inhalers. Seek doctor advice if fever is high, cough lasts more than a few weeks, or if symptoms worsen or you cough up blood. Vaccinations (like flu shot) and handwashing can help prevent viral bronchitis."
+    },
+    {
+      "disease": "Asthma",
+      "symptoms": [
+        "wheezing",
+        "coughing (especially at night)",
+        "chest tightness",
+        "shortness of breath"
+      ],
+      "advice": "Use your prescribed inhalers (bronchodilators and inhaled steroids) as directed. Monitor symptoms and breathing. Identify and avoid triggers (allergens, smoke, cold air). Maintain a clean home environment and use a peak flow meter if advised. Seek medical help if shortness of breath is severe, rescue inhaler isn't helping, or if cyanosis (bluish lips) occurs. Follow an asthma action plan; regular exercise and avoiding smoking help control asthma."
+    },
+    {
+      "disease": "Allergic rhinitis (Hay fever)",
+      "symptoms": [
+        "runny nose",
+        "sneezing",
+        "itchy or watery eyes",
+        "nasal congestion",
+        "itchy throat"
+      ],
+      "advice": "Avoid allergens (pollen, dust, pet dander) and keep windows closed during high pollen seasons. Use saline nasal sprays and over-the-counter antihistamines or nasal steroids for relief. Maintain a clean, allergen-free environment (use air filters, vacuuming). See a doctor if symptoms are persistent or severe. Allergy shots or stronger prescription medications may be considered. Prevent symptoms by taking allergy medications before exposure and staying hydrated."
+    },
+    {
+      "disease": "Sinusitis",
+      "symptoms": [
+        "nasal congestion",
+        "thick nasal discharge",
+        "facial pain or pressure",
+        "headache",
+        "reduced sense of smell",
+        "cough"
+      ],
+      "advice": "Rest and drink plenty of fluids. Apply warm compresses to the face to ease pain. Use saline nasal irrigation and decongestants if not contraindicated. Over-the-counter pain relievers help reduce fever and discomfort. Contact a doctor if symptoms last more than a week, worsen after initial improvement, or if you have high fever or vision changes. Prevent sinus issues by avoiding smoking, managing allergies, and using a humidifier for dry air."
+    },
+    {
+      "disease": "Conjunctivitis (Pink eye)",
+      "symptoms": [
+        "eye redness",
+        "itchy eyes",
+        "tearing",
+        "discharge (clear or pus)",
+        "crusting of eyelids"
+      ],
+      "advice": "Apply cool or warm compresses to relieve discomfort and use artificial tear eye drops. Avoid touching or rubbing eyes and wash hands frequently. Replace contact lenses if used. If pus is present or symptoms don't improve in a few days, see a doctor for possible antibiotic drops. Keep personal items (towels, makeup) separate and wash them often to prevent spread. Seek care if you have eye pain, vision changes, or intense redness."
+    },
+    {
+      "disease": "Otitis media (Ear infection)",
+      "symptoms": [
+        "ear pain",
+        "fluid drainage from ear",
+        "hearing difficulty",
+        "fever (especially in children)"
+      ],
+      "advice": "Use pain relievers (ibuprofen or acetaminophen) to ease ear pain and reduce fever. A warm cloth or heating pad on the ear can help. Most ear infections improve in a few days without antibiotics. Maintain fluid intake and rest. See a doctor if pain is severe, hearing loss occurs, fluid drains from the ear, or symptoms last more than 2–3 days. Prevent by avoiding smoke exposure, staying up to date on vaccines (flu, pneumococcal), and practicing good hand hygiene."
+    },
+    {
+      "disease": "Migraine",
+      "symptoms": [
+        "intense throbbing head pain",
+        "nausea or vomiting",
+        "sensitivity to light",
+        "sensitivity to sound"
+      ],
+      "advice": "Rest in a dark, quiet room and apply a cool compress to the forehead. Use over-the-counter pain relievers (e.g., acetaminophen, ibuprofen) at the first sign of headache if advised. If migraines are frequent or disabling, consult a doctor for specific medications or preventive strategies. Identify and avoid triggers (stress, certain foods, irregular sleep). Maintain regular sleep, meals, and hydration to help prevent attacks."
+    },
+    {
+      "disease": "Anxiety",
+      "symptoms": [
+        "excessive worry",
+        "restlessness",
+        "tension",
+        "trouble sleeping",
+        "rapid heartbeat",
+        "sweating"
+      ],
+      "advice": "Practice relaxation techniques (deep breathing, mindfulness, exercise) and maintain a regular routine. Limit caffeine and alcohol. Stay connected with supportive friends or groups. If anxiety interferes with daily life or causes panic attacks, consider professional help (therapy or medication). See a doctor if you have severe anxiety, thoughts of self-harm, or if self-help strategies are not enough. Regular exercise and a healthy lifestyle can improve anxiety symptoms."
+    },
+    {
+      "disease": "Depression",
+      "symptoms": [
+        "persistent sadness",
+        "loss of interest",
+        "fatigue",
+        "changes in appetite or sleep",
+        "difficulty concentrating",
+        "feelings of guilt"
+      ],
+      "advice": "Stay socially connected and maintain a routine. Engage in activities you once enjoyed, even if they feel difficult. Regular physical activity and adequate sleep can improve mood. Talk to a mental health professional or doctor if symptoms are severe (intense sadness, loss of hope, suicidal thoughts) or last more than two weeks. Counseling (therapy) and prescribed antidepressants can be effective treatments. Avoid alcohol and get support from friends or support groups."
+    },
+    {
+      "disease": "Hypertension (High blood pressure)",
+      "symptoms": [
+        "often none (asymptomatic)",
+        "headache",
+        "blurred vision",
+        "shortness of breath (in severe cases)"
+      ],
+      "advice": "Maintain a healthy diet (low salt, DASH diet), exercise regularly, manage weight, and avoid smoking or excessive alcohol. Monitor your blood pressure at home if possible. When levels are very high (e.g., >180/120) or if symptoms like severe headache, chest pain, or shortness of breath occur, seek immediate care. Lifestyle changes (diet, exercise, stress reduction) are key for blood pressure control. Regular check-ups are important; medications may be prescribed by a doctor to achieve healthy blood pressure."
+    },
+    {
+      "disease": "Type 2 Diabetes",
+      "symptoms": [
+        "increased thirst",
+        "frequent urination",
+        "increased hunger",
+        "unintended weight loss",
+        "fatigue",
+        "blurred vision",
+        "slow-healing sores",
+        "frequent infections"
+      ],
+      "advice": "Control blood sugar with a healthy diet (carb control) and regular exercise. Maintain a healthy weight. Monitor blood glucose as advised and take prescribed diabetes medications. Stay hydrated and follow a consistent meal schedule. See your doctor for regular check-ups and if symptoms like frequent urination or extreme thirst occur. Prevent complications by controlling blood pressure and cholesterol, and by not smoking."
+    },
+    {
+      "disease": "Coronary artery disease (Heart disease)",
+      "symptoms": [
+        "chest pain or pressure (angina)",
+        "shortness of breath",
+        "fatigue"
+      ],
+      "advice": "Adopt heart-healthy habits: eat a balanced diet low in saturated fat, exercise regularly, maintain a healthy weight, and quit smoking. Manage other conditions like high blood pressure, cholesterol, and diabetes. If you have chest pain, especially on exertion, seek medical evaluation promptly; it could signal heart disease. In an emergency (e.g., chest pain spreading to arm, sweating, nausea), call emergency services. Medications (e.g., statins, blood pressure drugs) may be prescribed by a doctor to manage heart disease."
+    },
+    {
+      "disease": "Stroke",
+      "symptoms": [
+        "sudden numbness or weakness (especially on one side)",
+        "sudden confusion or trouble speaking",
+        "sudden trouble seeing",
+        "sudden difficulty walking",
+        "severe headache"
+      ],
+      "advice": "Act F.A.S.T. (Face drooping, Arm weakness, Speech difficulty); if a stroke is suspected, call emergency services immediately. To prevent stroke: control high blood pressure, quit smoking, treat diabetes, eat healthily, and exercise. If you experience sudden neurological symptoms (even if mild), see a doctor right away. Rehabilitation therapies are important after a stroke; follow doctor's advice for medications (blood thinners, blood pressure meds) to reduce risk of recurrence."
+    },
+    {
+      "disease": "Osteoarthritis",
+      "symptoms": [
+        "joint pain",
+        "stiffness (especially in morning or after inactivity)",
+        "loss of flexibility",
+        "crepitus (grating sensation)"
+      ],
+      "advice": "Maintain a healthy weight and stay active with low-impact exercises (walking, swimming) to protect joints. Apply heat or cold packs for pain relief and take OTC NSAIDs or acetaminophen as needed. Consider physical therapy to strengthen muscles around joints. Use assistive devices (canes, braces) if needed to reduce joint strain. See a doctor if pain or stiffness is severe or limits activities; prescription therapies or injections may be discussed."
+    },
+    {
+      "disease": "Gastroesophageal reflux disease (GERD)",
+      "symptoms": [
+        "heartburn",
+        "acidic taste in mouth",
+        "chest discomfort",
+        "regurgitation of food or liquid",
+        "difficulty swallowing"
+      ],
+      "advice": "Avoid trigger foods (spicy, fatty, chocolate, caffeine) and eat smaller meals. Do not lie down right after eating and elevate the head of your bed. Over-the-counter antacids or H2-blockers may relieve mild heartburn. See a doctor if symptoms occur more than twice a week, persist despite OTC medication, or include trouble swallowing or chest pain. Weight loss (if needed), avoiding smoking, and eating earlier in the evening can help prevent reflux."
+    },
+    {
+      "disease": "Irritable bowel syndrome (IBS)",
+      "symptoms": [
+        "abdominal pain or cramping",
+        "bloating",
+        "diarrhea",
+        "constipation",
+        "mucus in stool"
+      ],
+      "advice": "Identify and avoid trigger foods (common culprits: caffeine, dairy, artificial sweeteners, spicy foods). Eat smaller, regular meals and stay hydrated. Regular exercise and stress management (yoga, meditation) often help. Try fiber supplements or laxatives/antidiarrheals as needed (after consulting a doctor) to manage bowel habits. If symptoms are severe (weight loss, bleeding) or unresponsive to basic measures, see a doctor. Keep a food diary to track and eliminate foods that worsen symptoms."
+    },
+    {
+      "disease": "Urinary tract infection (UTI)",
+      "symptoms": [
+        "painful urination",
+        "frequent urination",
+        "urgency to urinate",
+        "lower abdominal pain or pressure",
+        "cloudy or bloody urine"
+      ],
+      "advice": "Drink plenty of water and urinate frequently to help flush the bacteria. Use a heating pad on your abdomen to ease discomfort. Over-the-counter pain relievers can help alleviate burning. See a doctor for evaluation and appropriate antibiotics if symptoms (burning, frequent urgent urination, blood in urine) appear. If you develop fever, back pain or nausea, seek care promptly as it may indicate a kidney infection. Prevent UTIs by wiping front-to-back, urinating after intercourse, and avoiding irritants (douches, harsh soaps)."
+    },
+    {
+      "disease": "Chronic kidney disease",
+      "symptoms": [
+        "often none early on",
+        "fatigue",
+        "swelling (edema) of feet or ankles",
+        "decreased appetite",
+        "nausea",
+        "frequent urination",
+        "shortness of breath"
+      ],
+      "advice": "Control underlying conditions (diabetes, high blood pressure) that can worsen kidney function. Limit salt and protein intake as advised, and avoid excessive use of NSAIDs. Stay well-hydrated unless instructed otherwise. Regularly monitor kidney function with your doctor. Report any swelling, fatigue, or decreased urination to your doctor. Quit smoking and exercise regularly to help protect kidney health."
+    },
+    {
+      "disease": "Hepatitis B",
+      "symptoms": [
+        "jaundice (yellowing of skin/eyes)",
+        "fatigue",
+        "abdominal pain",
+        "loss of appetite",
+        "nausea",
+        "joint pain"
+      ],
+      "advice": "Get vaccinated (if not already immune) and use barrier protection to prevent spread. Avoid alcohol and drugs that can stress the liver. Eat a balanced diet and stay hydrated. See a doctor if you develop yellowing of the skin/eyes, dark urine, severe fatigue, or abdominal pain. Medication may be prescribed by a doctor to manage chronic infection. Practice good hygiene; do not share needles or personal items that may have blood."
+    },
+    {
+      "disease": "HIV/AIDS",
+      "symptoms": [
+        "flu-like illness (fever, fatigue, rash) initially",
+        "persistent swollen lymph nodes",
+        "night sweats",
+        "weight loss",
+        "recurrent infections"
+      ],
+      "advice": "Get tested if at risk (unprotected sex, needle use) and use prevention (condoms, clean needles). If diagnosed, start antiretroviral therapy (ART) to keep the virus suppressed. Practice safe sex and do not share needles to prevent transmission. See a healthcare provider for regular monitoring (CD4 count, viral load). Stay up to date on vaccinations (flu, pneumonia), and maintain a healthy lifestyle to support immunity."
+    },
+    {
+      "disease": "Tuberculosis (TB)",
+      "symptoms": [
+        "persistent cough (3+ weeks)",
+        "fever",
+        "night sweats",
+        "weight loss",
+        "fatigue",
+        "coughing up blood"
+      ],
+      "advice": "If you have a persistent cough (more than 3 weeks), weight loss, fever or night sweats, see a doctor for testing. Follow the full prescribed course of anti-TB medications as directed. Isolate from others when infectious and cover mouth when coughing. Supportive care: rest and good nutrition. Prevent TB by ensuring close contacts are tested and, if needed, treated; wear masks in high-risk settings."
+    },
+    {
+      "disease": "Malaria",
+      "symptoms": [
+        "fever",
+        "chills",
+        "headache",
+        "muscle aches",
+        "sweats",
+        "nausea",
+        "vomiting"
+      ],
+      "advice": "Seek medical care immediately if you have fever after visiting a malaria area. Take prescribed antimalarial drugs to treat the infection. Rest and drink plenty of fluids. Use acetaminophen for fever and pain (avoid NSAIDs). Prevention is key: use bed nets, insect repellent, and take prophylactic antimalarial medication before travel to endemic areas."
+    },
+    {
+      "disease": "Chickenpox",
+      "symptoms": [
+        "itchy blisters (vesicular rash)",
+        "fever",
+        "loss of appetite",
+        "headache",
+        "fatigue"
+      ],
+      "advice": "Keep the patient comfortable: use calamine lotion or oatmeal baths for itching and trim nails to prevent scratching. Treat fever with acetaminophen (avoid aspirin). Stay hydrated. Isolate the infected person until all blisters crust over to prevent spread. See a doctor if rash is very widespread, or if the patient has immune issues or complications. Prevent chickenpox with the varicella vaccine."
+    },
+    {
+      "disease": "Measles",
+      "symptoms": [
+        "fever",
+        "cough",
+        "runny nose",
+        "red eyes (conjunctivitis)",
+        "koplik spots",
+        "red rash starting on face"
+      ],
+      "advice": "Rest and drink fluids. Use acetaminophen for fever and pain. Quarantine the patient to avoid spreading the virus. Seek medical care if there are complications (pneumonia, ear infection, severe dehydration) or if immunocompromised. Prevent measles with the MMR vaccine (measles-mumps-rubella)."
+    },
+    {
+      "disease": "Dengue fever",
+      "symptoms": [
+        "high fever",
+        "severe headache",
+        "pain behind the eyes",
+        "joint/muscle pain",
+        "rash",
+        "mild bleeding"
+      ],
+      "advice": "Rest, stay hydrated, and take acetaminophen for pain and fever (avoid ibuprofen/aspirin). Seek immediate medical attention if warning signs appear: severe abdominal pain, persistent vomiting, bleeding, or lethargy. There is no specific antiviral; treatment is supportive. Prevent mosquito bites using repellents, nets and eliminate standing water. Early detection and hydration are key, especially if platelets drop."
+    },
+    {
+      "disease": "Eczema (Atopic dermatitis)",
+      "symptoms": [
+        "itchy skin rash",
+        "red or inflamed skin",
+        "dry patches",
+        "crusting or oozing of the skin"
+      ],
+      "advice": "Moisturize skin regularly and use gentle, fragrance-free products. Apply cool compresses or take lukewarm baths to relieve itching. Use over-the-counter hydrocortisone cream for flares; see a doctor if it spreads or gets infected. Identify and avoid triggers (irritants, allergens, stress). Maintain a skin-care routine and keep nails short to prevent scratching."
+    }
+  ] 

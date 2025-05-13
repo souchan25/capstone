@@ -1,0 +1,70 @@
+/* Force sidebar visibility with !important rules */
+
+/* Ensure sidebar wrapper and sidebar are visible */
+.sidebar-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 0 0 300px !important;
+  width: 300px !important;
+  min-height: 100% !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Only collapse when the .hidden class is applied */
+.sidebar-wrapper.hidden {
+  flex: 0 0 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+.sidebar {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 300px !important;
+  height: 100% !important;
+  position: relative !important;
+  z-index: 5 !important;
+  transform: none !important;
+}
+
+/* Only collapse when the .collapsed class is applied */
+.sidebar.collapsed {
+  transform: translateX(-300px) !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure toggle button is always visible */
+.sidebar-toggle {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  position: absolute !important;
+}
+
+/* Main layout and content area */
+.main-layout {
+  display: flex !important;
+  position: relative !important;
+}
+
+.content-area {
+  flex: 1 !important;
+  z-index: 2 !important;
+}
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  .sidebar-wrapper {
+    width: 100% !important;
+    flex: none !important;
+  }
+  
+  .sidebar {
+    width: 100% !important;
+  }
+} 

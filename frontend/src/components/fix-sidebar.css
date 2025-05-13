@@ -1,0 +1,66 @@
+/* This file contains fixes for the sidebar and chat display */
+
+/* Override content area styles */
+.content-area {
+  z-index: 2 !important; 
+  flex: 1 !important;
+  min-height: 500px !important;
+}
+
+.content-area.expanded {
+  margin-left: 0 !important;
+  width: 100% !important;
+  flex-grow: 1 !important;
+}
+
+/* Fix sidebar styles */
+.sidebar.collapsed {
+  position: absolute;
+  z-index: 0 !important;
+  opacity: 0;
+}
+
+/* Hidden sidebar wrapper */
+.sidebar-wrapper.hidden {
+  flex: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Ensure chat container works properly in collapsed state */
+.chat-container.full-width {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Chat messages container fix */
+.chat-messages {
+  flex: 1 !important;
+  height: 350px !important;
+}
+
+/* Chat input fix */
+.chat-input {
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Improve mobile experience */
+@media (max-width: 768px) {
+  .content-area.expanded {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  
+  .chat-messages {
+    height: 300px !important;
+  }
+  
+  .chat-input {
+    flex-wrap: wrap !important;
+  }
+  
+  .chat-input input {
+    width: 100% !important;
+  }
+}
